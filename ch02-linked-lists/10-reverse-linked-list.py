@@ -5,11 +5,9 @@
     Write code to remove duplicates from an unsorted linked list.
 
 @   Example
-    Input:      linked_list = [1,2,3,4,5,Null]
-                [1] -> [2] -> [3] -> [4] -> [5] -> Null
+    Input:      [1] -> [2] -> [3] -> [4] -> [5] -> Null
 
-    Output:     linked_list = [5,4,3,2,1,Null]
-                Null <- [1] <- [2] <- [3] <- [4] <- [5]
+    Output:     Null <- [1] <- [2] <- [3] <- [4] <- [5]
 
 @   Template:
 
