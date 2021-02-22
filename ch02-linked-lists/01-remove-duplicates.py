@@ -1,15 +1,13 @@
 """
-@   Is Unique | 1.1
+@   Is Unique | 2.1
 
 @   Problem
     Write code to remove duplicates from an unsorted linked list.
 
 @   Example
-    Input:      linked_list = [1,2,2,3,4,2,5,Null]
-                [1] -> [2] -> [2] -> [3] -> [4] -> [4] -> [5] -> Null
+    Input:      [1] -> [2] -> [2] -> [3] -> [4] -> [4] -> [5] -> Null
 
-    Output:     linked_list = [1,2,3,4,5,Null]
-                [1] -> [2] -> [3] -> [4] -> [5] -> Null
+    Output:     [1] -> [2] -> [3] -> [4] -> [5] -> Null
 
 @   Template:
     01.
