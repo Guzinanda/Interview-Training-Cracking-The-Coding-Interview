@@ -50,3 +50,4 @@ def hasFloydCycle(self, head):
     
     except:
         return False
+        
