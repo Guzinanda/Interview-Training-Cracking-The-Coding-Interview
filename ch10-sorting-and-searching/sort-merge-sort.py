@@ -2,42 +2,55 @@
 @   Sort Agorithm | Merge Sort
 
 @   Problem
-    Given two sorted integer arrays nums1 and nums2, merge them.
+    Given an unsorted array, sort it using Merge Sort Algorithm.
 
 @   Example
-    Input:      nums1 = [1,2,3,0,0,0]
-                nums2 = [2,5,6]
-                m = 3
-                n = 3
+    Input:      list = [7,2,10,3,1]
+    Output:     list = [1,2,3,7,10]
 
-    Output:     nums1 = [1,2,2,3,5,6]
+@   Explanation:
+    https://www.youtube.com/watch?v=_trEkEX_-2Q
 
 """
 
-def mergeSort(nums1, m, nums2, n):
+def mergeSort(lis):
+    
+    if len(lis) > 1:
+        mid = len(lis) // 2
+        left_lis = lis[:mid]
+        right_lis = lis[mid:]
 
-    nums1_copy = nums1[:m]                                                          # We make a copy of the first 'm' elements of 'nums1'
+        mergeSort(left_lis)
+        mergeSort(right_lis)
 
-    p1 = 0                                                                          # We create read pointers for nums1_copy and nums2 respectively.
-    p2 = 0
+        i = 0
+        j = 0
+        k = 0
 
-    for i in range(m + n):                                                          
-        if p2 >= n or (p1 < m and nums1_copy[p1] <= nums2[p2]):
-            nums1[i] = nums1_copy[p1]
-            p1 += 1
+        while i < len(left_lis) and j < len(right_lis):
+            if left_lis[i] < right_lis[j]:
+                lis[k] = left_lis[i]
+                i = i + 1
+                k = k + 1
+            else:
+                lis[k] = right_lis[j]
+                j = j + 1
+                k = k + 1
 
-        else:
-            nums1[i] = nums2[p2]
-            p2 += 1
+        while i < len(left_lis):
+            lis[k] = left_lis[i]
+            i = i + 1
+            k = k + 1
 
-    return nums1
+        while j < len(right_lis):
+            lis[k] = right_lis[j]
+            j = j + 1
+            k = k + 1
+
+    return lis
 
 
 # TEST _______________________________________________________________________     _____________________________________________________________________________________
 
-nums1 = [1,2,3,0,0,0]
-nums2 = [2,5,6]
-m = 3
-n = 3
-
-print(mergeSort(nums1, m, nums2, n))
+lis = [7,2,10,3,1]
+print(mergeSort(lis))
